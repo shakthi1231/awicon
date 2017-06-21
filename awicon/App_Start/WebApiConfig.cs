@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using System.Web.Http.Cors;
 
 namespace awicon
 {
@@ -14,6 +15,11 @@ namespace awicon
         {
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
+            var enableCorsAttribute = new EnableCorsAttribute("*",
+                                               "Origin, Content-Type, Accept",
+                                               "GET, PUT, POST, DELETE, OPTIONS");
+            config.EnableCors(enableCorsAttribute);
+            config.Formatters.XmlFormatter.SupportedMediaTypes.Add(new System.Net.Http.Headers.MediaTypeHeaderValue("multipart/form-data"));
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 

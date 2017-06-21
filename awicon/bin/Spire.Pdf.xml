@@ -740,6 +740,21 @@
             Custom Scale
             </summary>
         </member>
+        <member name="T:Spire.Pdf.PdfPrintPageMode">
+            <summary>
+            Pdf Print Page Mode
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.PdfPrintPageMode.NormalMode">
+            <summary>
+            Normal Print
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.PdfPrintPageMode.MultiPageMode">
+            <summary>
+            Multi-Page Print
+            </summary>
+        </member>
         <!-- Badly formed XML comment ignored for member "F:Spire.Pdf.IO.CrossTable.m_initialNumberOfSubsection" -->
         <member name="T:Spire.Pdf.Graphics.PdfPath">
             <summary>
@@ -1083,6 +1098,18 @@
             </summary>
             <returns>The last point.</returns>
         </member>
+        <member name="M:Spire.Pdf.Graphics.PdfPath.GetRectangleF">
+            <summary>
+            Calc Point w/h
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.Graphics.PdfPath.GetBound">
+            <summary>
+            get this path's bound.
+            </summary>
+            <returns>return this path's bound</returns>
+        </member>
         <member name="P:Spire.Pdf.Graphics.PdfPath.FillMode">
             <summary>
             Gets or sets the fill mode.
@@ -1301,6 +1328,11 @@
             </summary>
             <value>The form.</value>
         </member>
+        <member name="F:Spire.Pdf.Widget.PdfStyledFieldWidget.m_DAString">
+            <summary>
+            Get DA for from annot 
+            </summary>
+        </member>
         <member name="P:Spire.Pdf.Widget.PdfStyledFieldWidget.Actions">
             <summary>
             Gets the actions of the field.
@@ -1421,6 +1453,11 @@
             Gets the first selected item in the list.
             </summary>
         </member>
+        <member name="P:Spire.Pdf.Widget.PdfChoiceWidgetFieldWidget.CommitOnSelChange">
+            <summary>
+            Gets or sets the flag indicating if a new value selected is committed immediately without waiting to leave the field.
+            </summary>
+        </member>
         <member name="P:Spire.Pdf.Widget.PdfComboBoxWidgetFieldWidget.Editable">
             <summary>
             Gets or sets a value indicating whether this  is editable.
@@ -1477,6 +1514,12 @@
             <summary>
             Represents the base class for annotation objects.
             </summary>
+        </member>
+        <member name="M:Spire.Pdf.Annotations.PdfAnnotation.#ctor(Spire.Pdf.Primitives.PdfDictionary)">
+            <summary>
+            Creates new annotation object with the specified dictionary.
+            </summary>
+            <param name="dictionary">Annotation's dictionary</param>
         </member>
         <member name="P:Spire.Pdf.Annotations.PdfAnnotation.Color">
             <summary>
@@ -1647,6 +1690,21 @@
             </summary>
             <value></value>
         </member>
+        <member name="F:Spire.Pdf.General.Render.PdfToPsRenderer.m_ImageQualityMode">
+            <summary>
+            specify the quality level of render image
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.General.Render.PdfToPsRenderer.m_TjAfterIsTranslate">
+            <summary>
+            Determine whether there is Tj in front of Td,TD,cm,T* ,TL,Tw,Tc,Tz. if not ,you need to calculate the translation
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.General.Render.PdfToPsRenderer.m_UserDefinedTextMatrix">
+            <summary>
+            Save the translation data
+            </summary>
+        </member>
         <member name="F:Spire.Pdf.General.Render.PdfToPsRenderer.m_textLeading">
             <summary>
             Text leading
@@ -1723,6 +1781,13 @@
             </summary>
             <param name="rectangle"></param>
         </member>
+        <member name="M:Spire.Pdf.General.Render.PdfToPsRenderer.ApplyStrokingColor(System.Boolean,System.Single[])">
+            <summary>
+            Apply Color Space,Bug-654
+            </summary>
+            <param name="isNonStroking"></param>
+            <param name="colorRGB"></param>
+        </member>
         <member name="M:Spire.Pdf.General.Render.PdfToPsRenderer.Process">
             
         </member>
@@ -1747,6 +1812,11 @@
             <param name="structure"></param>
             <param name="decodedText"></param>
             <param name="increaseWidth"></param>
+        </member>
+        <member name="P:Spire.Pdf.General.Render.PdfToPsRenderer.ImageQualityMode">
+            <summary>
+            specify the quality level of render image
+            </summary>
         </member>
         <member name="M:Spire.Pdf.General.Paper.Font.Common.IFontParser.Parse(Spire.Pdf.General.Paper.Font.Common.Locator.FontDefinition,Spire.Pdf.General.Paper.Font.TTF.Internals.Parsing.TTFFileReader)">
             <summary>
@@ -2234,12 +2304,27 @@
             Initializes the new instance of 
             </summary>
         </member>
+        <member name="M:Spire.Pdf.Barcode.PdfUnidimensionalBarcode.Draw(Spire.Pdf.PdfPageBase,System.Drawing.RectangleF)">
+            <summary>
+            Draws the barcode on the  at the specified region.
+            </summary>
+            <param name="page">The pdf page.</param>
+            <param name="rect">The barcode region.</param>
+        </member>
         <member name="M:Spire.Pdf.Barcode.PdfUnidimensionalBarcode.Draw(Spire.Pdf.PdfPageBase,System.Drawing.PointF)">
             <summary>
             Draws the barcode on the  at the specified location.
             </summary>
             <param name="page">The pdf page.</param>
             <param name="location">The barcode location.</param>
+        </member>
+        <member name="M:Spire.Pdf.Barcode.PdfUnidimensionalBarcode.Draw(Spire.Pdf.PdfPageBase,System.Drawing.PointF,System.Drawing.SizeF)">
+            <summary>
+            Draws the barcode on the  at the specified location with the size.
+            </summary>
+            <param name="page">The pdf page.</param>
+            <param name="location">The barcode location.</param>
+            <param name="size">The barcode size.</param>
         </member>
         <member name="M:Spire.Pdf.Barcode.PdfUnidimensionalBarcode.ToImage">
             <summary>
@@ -2659,6 +2744,11 @@
             Represents Pdf Template object.
             </summary>
         </member>
+        <member name="F:Spire.Pdf.Graphics.PdfTemplate.m_origin">
+            <summary>
+            the origin location of the template
+            </summary>
+        </member>
         <member name="M:Spire.Pdf.Graphics.PdfTemplate.#ctor(System.Drawing.SizeF)">
             <summary>
             Initializes a new instance of the  class.
@@ -2794,6 +2884,11 @@
             Represents a digital signature used for signing a PDF document.
             </summary>
         </member>
+        <member name="F:Spire.Pdf.Security.PdfSignature.m_SignInfoFont">
+            <summary>
+            Set signature info font
+            </summary>
+        </member>
         <member name="F:Spire.Pdf.Security.PdfSignature.m_DigitalSigner">
             <summary>
             Digital Signature Common name
@@ -2812,6 +2907,11 @@
         <member name="F:Spire.Pdf.Security.PdfSignature.m_IsTag">
             <summary>
             Digital Signature Whether to display the label
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Security.PdfSignature.m_ShowConfiguerText">
+            <summary>
+            Show Signature Configuer Text 
             </summary>
         </member>
         <member name="F:Spire.Pdf.Security.PdfSignature.m_ConfigGraphicType">
@@ -2844,6 +2944,50 @@
             Digital Signature LocationInfo  Label
             </summary>
         </member>
+        <member name="M:Spire.Pdf.Security.PdfSignature.DrawSignatureText(Spire.Pdf.Graphics.PdfCanvas,Spire.Pdf.Graphics.PdfSolidBrush,Spire.Pdf.Graphics.PdfStringFormat,System.Single,System.Single,System.Single)">
+            <summary>
+            Draw Text Signature
+            </summary>
+            <param name="g"></param>
+            <param name="solidBrush"></param>
+            <param name="PdfStrFormat"></param>
+            <param name="HalfWidth"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:Spire.Pdf.Security.PdfSignature.DrawSignatureInformation(Spire.Pdf.Graphics.PdfCanvas,Spire.Pdf.Graphics.PdfSolidBrush,Spire.Pdf.Graphics.PdfStringFormat,System.Single,System.Single,System.Single)">
+            <summary>
+            Draw Signature information
+            </summary>
+            <param name="g"></param>
+            <param name="solidBrush"></param>
+            <param name="PdfStrFormat"></param>
+            <param name="HalfWidth"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:Spire.Pdf.Security.PdfSignature.DrawSignaturePicture(Spire.Pdf.Graphics.PdfCanvas,System.String,System.Single,System.Single)">
+            <summary>
+            Draw Picture Signature
+            </summary>
+            <param name="g"></param>
+            <param name="picturePath"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:Spire.Pdf.Security.PdfSignature.DrawStringText(Spire.Pdf.Graphics.PdfCanvas,Spire.Pdf.Graphics.PdfFontBase,Spire.Pdf.Graphics.PdfSolidBrush,Spire.Pdf.Graphics.PdfStringFormat,System.String,System.Single,System.Single@,System.Single)">
+            <summary>
+            DrawString 
+            </summary>
+            <param name="g">PdfCanvas g</param>
+            <param name="font">PdfFont font</param>
+            <param name="solidBrush">PdfSolidBrush solidBrush</param>
+            <param name="PdfStrFormat">PdfStringFormat PdfStrFormat</param>
+            <param name="DrawText">text</param>
+            <param name="x">point x</param>
+            <param name="y">point y</param>
+            <param name="HalfWidth">half - width</param>
+        </member>
         <member name="M:Spire.Pdf.Security.PdfSignature.VerifySignature">
             <summary>
             check thie validity of the signature
@@ -2856,6 +3000,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="P:Spire.Pdf.Security.PdfSignature.Certificates">
+            <summary>
+            Get all certificates.
+            </summary>
+        </member>
         <member name="P:Spire.Pdf.Security.PdfSignature.Date">
             <summary>
             Get Signature Datetime
@@ -2864,6 +3013,11 @@
         <member name="P:Spire.Pdf.Security.PdfSignature.SignatureName">
             <summary>
             get/set pdf signature name 
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Security.PdfSignature.SignInfoFont">
+            <summary>
+            Set signature info font
             </summary>
         </member>
         <member name="P:Spire.Pdf.Security.PdfSignature.DigitalSigner">
@@ -2884,6 +3038,11 @@
         <member name="P:Spire.Pdf.Security.PdfSignature.IsTag">
             <summary>
             Digital Signature Whether to display the label
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Security.PdfSignature.ShowConfiguerText">
+            <summary>
+            Show Digital Signature,Configuer Text 
             </summary>
         </member>
         <member name="P:Spire.Pdf.Security.PdfSignature.ConfigGraphicType">
@@ -2930,7 +3089,14 @@
             <summary>
             Signature data
             </summary>
-            <param name="signData"></param>
+            <param name="signData">The data to pfx file.</param>
+        </member>
+        <member name="M:Spire.Pdf.Security.PdfCertificate.#ctor(System.Byte[],System.String)">
+            <summary>
+            Signature data
+            </summary>
+            <param name="signData">The data to pfx file.</param>
+            <param name="password">The password for pfx file.</param>
         </member>
         <member name="T:Spire.Pdf.Widget.PdfListWidgetFieldItemCollection">
             <summary>
@@ -3025,10 +3191,24 @@
             apply hight light of the seached text
             </summary>
         </member>
+        <member name="M:Spire.Pdf.General.Find.PdfTextFind.ApplyRecoverString(System.String,System.Boolean)">
+            <summary>
+            apply hight light of the seached text,with unicode
+            </summary>
+            <param name="newvalue"></param>
+            <param name="unicode"></param>
+        </member>
         <member name="M:Spire.Pdf.General.Find.PdfTextFind.ApplyRecoverString(System.String,System.Drawing.Color)">
             <summary>
             apply hight light of the seached text
             </summary>
+        </member>
+        <member name="M:Spire.Pdf.General.Find.PdfTextFind.ApplyRecoverString(System.String,System.Drawing.Color,System.Boolean)">
+            <summary>
+            apply hight light of the seached text,with unicode
+            </summary>
+            <param name="newvalue"></param>
+            <param name="backColor"></param>
         </member>
         <member name="P:Spire.Pdf.General.Find.PdfTextFind.SearchText">
             <summary>
@@ -3970,6 +4150,16 @@
             If the element doesn't fit at the first page, don't draw it on this page.
             </summary>
         </member>
+        <member name="M:Spire.Pdf.General.Render.Font.TTFFont.GetCharacterMapTable(Spire.Pdf.Primitives.PdfDictionary)">
+            <summary>
+            This outputs individual glyph index to character code mapping for each char.
+            If you are doing any work on CMap, you need to open the resulting file in Adobe Reader, 
+            select and copy text, paste it to notepad and see if it was correctly mapped to characters. 
+            It is especially important to do so for TestUnicode.doc.
+            </summary>
+            <param name="m_fontDictionary"></param>
+            <returns></returns>
+        </member>
         <member name="T:Spire.Pdf.General.PdfSound">
             <summary>
             Represents sound embedded into pdf document.
@@ -4088,10 +4278,36 @@
             This class represents a set of the properties that define the internal structure of PDF file.
             </summary>
         </member>
+        <member name="F:Spire.Pdf.PdfFileInfo.m_documentBase">
+             <summary>
+            PDF Document object
+             </summary>
+        </member>
+        <member name="F:Spire.Pdf.PdfFileInfo.m_LoadFile">
+            <summary>
+            read pdf file
+            </summary>
+        </member>
         <member name="M:Spire.Pdf.PdfFileInfo.#ctor">
             <summary>
             Initializes a new instance of the  class.
             </summary>    
+        </member>
+        <member name="M:Spire.Pdf.PdfFileInfo.SetPdfVersion(Spire.Pdf.PdfVersion)">
+            <summary>
+            
+            </summary>
+            <param name="version"></param>
+        </member>
+        <member name="P:Spire.Pdf.PdfFileInfo.DocumentBase">
+             <summary>
+            PDF Document object
+             </summary>
+        </member>
+        <member name="P:Spire.Pdf.PdfFileInfo.LoadFile">
+            <summary>
+            read pdf file
+            </summary>
         </member>
         <member name="P:Spire.Pdf.PdfFileInfo.Version">
             <summary>
@@ -4119,7 +4335,7 @@
         </member>
         <member name="F:Spire.Pdf.PdfDocument.m_PageScaling">
             <summary>
-            PDF Document Print PageScaling
+            Get or Set PdfDocument Print PageScaling
             </summary>
         </member>
         <member name="F:Spire.Pdf.PdfDocument.m_SetPdfToHtmlParameter">
@@ -4187,6 +4403,36 @@
             <param name="filename">The path to source PDF document.</param>
             <param name="password">The password (user or owner) of the encrypted document.</param>
         </member>
+        <member name="M:Spire.Pdf.PdfDocument.LoadFromXPS(System.Byte[])">
+            <summary>
+            Load a xps bytes array.
+            </summary>
+            <param name="xpsBytes">the xps byte array</param>
+        </member>
+        <member name="M:Spire.Pdf.PdfDocument.LoadFromXPS(System.String)">
+            <summary>
+            Load a xps file.
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:Spire.Pdf.PdfDocument.LoadFromXPS(System.IO.Stream)">
+            <summary>
+            Load a xps stream.
+            </summary>
+            <param name="xpsStream"></param>
+        </member>
+        <member name="M:Spire.Pdf.PdfDocument.LoadFromSvg(System.String)">
+            <summary>
+            Load Pdf from svg file.
+            </summary>
+            <param name="fileName">A relative or absolute path for the svg file</param>
+        </member>
+        <member name="M:Spire.Pdf.PdfDocument.LoadFromSvg(System.IO.Stream)">
+            <summary>
+            Load pdf from svg stream.
+            </summary>
+            <param name="stream">A Svg file stream</param>
+        </member>
         <member name="M:Spire.Pdf.PdfDocument.LoadFromHTML(System.String,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
             Load file from disk file.
@@ -4218,6 +4464,21 @@
             <param name="Size">paper size</param>
             <param name="layoutFormat">PdfHtmlLayoutFormat layoutFormat</param>
         </member>
+        <member name="M:Spire.Pdf.PdfDocument.LoadFromHTML(System.String,System.Boolean,System.Boolean,System.Boolean,Spire.Pdf.PdfPageSettings,Spire.Pdf.HtmlConverter.PdfHtmlLayoutFormat,System.Boolean)">
+            <summary>
+             Load file from disk file.
+            </summary>
+            <param name="url">url address</param>
+            <param name="enableJavaScript">Enable javascrpit</param>
+            <param name="enableHyperlinks">Enable hyperlink</param>
+            <param name="autoDetectPageBreak">Auto detect page break</param>
+            <param name="Size">paper size</param>
+            <param name="layoutFormat">PdfHtmlLayoutFormat layoutFormat</param>
+            <param name="isLoadComplete">
+            by default false, when load Html DOM timeout(PdfHtmlLayoutFormat.LoadHtmlTimeout),convert uncompleted Html DOM to pdf.
+            if true,until Html DOM load completed,then convert to pdf. 
+            </param>
+        </member>
         <member name="M:Spire.Pdf.PdfDocument.LoadFromHTML(System.String,System.Boolean,Spire.Pdf.PdfPageSettings,Spire.Pdf.HtmlConverter.PdfHtmlLayoutFormat)">
             <summary>
             Load htmlSourceCode to Pdf
@@ -4235,7 +4496,10 @@
             <param name="autoDetectPageBreak">Auto detect page break</param>
             <param name="setting">PdfPageSettings setting</param>
             <param name="layoutFormat">PdfHtmlLayoutFormat layoutFormat</param>
-            <param name="isLoadComplete">WebBrowser load Complete</param>
+            <param name="isLoadComplete">
+            by default false, when load Html DOM timeout(PdfHtmlLayoutFormat.LoadHtmlTimeout),convert uncompleted Html DOM to pdf.
+            if true,until Html DOM load completed,then convert to pdf. 
+            </param>
         </member>
         <member name="M:Spire.Pdf.PdfDocument.LoadFromBytes(System.Byte[])">
             <summary>
@@ -4290,19 +4554,28 @@
             <summary>
             Saves PDF document to file.
             </summary>
-            <param name="filename">File name</param>
+            <param name="filename">A relative or absolute path for the file</param>
         </member>
         <member name="M:Spire.Pdf.PdfDocument.SaveToFile(System.String,Spire.Pdf.FileFormat)">
             <summary>
             Saves PDF document to file.
             </summary>
-            <param name="filename">File name</param>
+            <param name="filename">A relative or absolute path for the file</param>
+            <param name="fileFormat">File format for the file</param>
         </member>
         <member name="M:Spire.Pdf.PdfDocument.SaveAsImage(System.Int32)">
             <summary>
             Saves PDF document page as image
             </summary>
             <param name="pageIndex">Page with page index to save as image</param>
+            <returns>Returns  page as Image</returns>
+        </member>
+        <member name="M:Spire.Pdf.PdfDocument.SaveAsImage(System.Int32,System.Single,System.Boolean)">
+            <summary>
+            Saves PDF document page as image
+            </summary>
+            <param name="pageIndex">Page with page index to save as image</param>
+            <param name="zoomFactor"></param>
             <returns>Returns  page as Image</returns>
         </member>
         <member name="M:Spire.Pdf.PdfDocument.SaveAsImage(System.Int32,System.Int32,System.Int32)">
@@ -4414,14 +4687,81 @@
             page inside of the source document.
             </remarks>
         </member>
+        <member name="F:Spire.Pdf.PdfDocument.m_PrintPageMode">
+            <summary>
+            Get or Set PdfDocument pages Print Mode
+            </summary>
+        </member>
+        <member name="M:Spire.Pdf.PdfDocument.m_printDocument_QueryPageSettings(System.Object,System.Drawing.Printing.QueryPageSettingsEventArgs)">
+            <summary>
+            Seting Param
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spire.Pdf.PdfDocument.OnBeginPrint(System.Object,System.Drawing.Printing.PrintEventArgs)">
+            <summary>
+            Begin Print Page
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spire.Pdf.PdfDocument.OnPrintPage(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+            <summary>
+            Print Page
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spire.Pdf.PdfDocument.Print(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spire.Pdf.PdfDocument.PrintMultiPage(System.Object)">
+            <summary>
+            Print Multi-page
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Spire.Pdf.PdfDocument.SpiltPage(System.Drawing.Imaging.Metafile,System.Drawing.Rectangle,System.Drawing.Rectangle)">
+            <summary>
+            
+            </summary>
+            <param name="bitmap"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.PdfDocument.SplitPage(System.Collections.Generic.List{System.Drawing.RectangleF},System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="lists"></param>
+            <param name="metafileWidth"></param>
+            <param name="metafileHeight"></param>
+            <param name="rectWidth"></param>
+            <param name="rectHeight"></param>
+            <param name="heightPos"></param>
+            <param name="widthPos"></param>
+        </member>
+        <member name="P:Spire.Pdf.PdfDocument.UseHighQualityImage">
+            <summary>
+            Indicates whether to use the high qulity image when convert document
+            </summary>
+        </member>
         <member name="P:Spire.Pdf.PdfDocument.AllowCreateForm">
             <summary>
             Get or Set Allow Create Form.
             </summary>
         </member>
+        <member name="P:Spire.Pdf.PdfDocument.UseInvariantCulture">
+            <summary>
+            Indicates whether use invariant culture mode to convert pdf document.
+            </summary>
+        </member>
         <member name="P:Spire.Pdf.PdfDocument.PageScaling">
             <summary>
-            Get or Set Current PDF Document Print PageScaling
+            Get or Set PdfDocument Print PageScaling
             </summary>
         </member>
         <member name="P:Spire.Pdf.PdfDocument.CustomScaling">
@@ -4545,6 +4885,21 @@
         <member name="P:Spire.Pdf.PdfDocument.EnableFontCache">
             <summary>
             Indicates whether enable font cache.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.PdfDocument.IsEncrypted">
+            <summary>
+            Indicates the document is encrypted or not.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.PdfDocument.IsPortfolio">
+            <summary>
+            Indicates the document is a PDF Portfolio or not.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.PdfDocument.PrintPageMode">
+            <summary>
+            Get or Set PdfDocument pages Print Mode
             </summary>
         </member>
         <member name="P:Spire.Pdf.PdfDocument.PrintFromPage">
@@ -5095,12 +5450,12 @@
         </member>
         <member name="F:Spire.Pdf.Tables.PdfTableDataSourceType.External">
             <summary>
-            Specifies that the PdfLightTable has been binded to an external datasource.
+            Specifies that the PdfTable has been binded to an external datasource.
             </summary>
         </member>
         <member name="F:Spire.Pdf.Tables.PdfTableDataSourceType.TableDirect">
             <summary>
-            Specifies that the values are directly binded to the PdfLightTable.
+            Specifies that the values are directly binded to the PdfTable.
             </summary>
         </member>
         <member name="T:Spire.Pdf.PdfBorderOverlapStyle">
@@ -5686,6 +6041,13 @@
             <param name="angleInRadians">Double value of angle in radians to convert.</param>
             <returns>The value of the angle in degrees.</returns>
         </member>
+        <member name="M:Spire.Pdf.General.Render.PdfCommon.CheckLineFromPath(System.String)">
+            <summary>
+            According to Path to determine whether it is a straight line. If All points of X or Y are equal, then is is a straight line
+            </summary>
+            <param name="pathData"></param>
+            <returns></returns>
+        </member>
         <!-- Badly formed XML comment ignored for member "M:Spire.Pdf.General.Render.Font.FontSupport.#cctor" -->
         <member name="M:Spire.Pdf.General.Render.Font.FontSupport.GetCharFromAdobeGlyphListByName(System.String)">
             <summary>
@@ -5745,6 +6107,11 @@
         <member name="T:Spire.Pdf.PdfDocumentBase">
             <summary>
             Represent common PdfDocumentBase classes.
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.PdfDocumentBase.m_UseHighQualityImage">
+            <summary>
+            specify whether to use high quality images
             </summary>
         </member>
         <member name="F:Spire.Pdf.PdfDocumentBase.m_SetPdfToHtmlParameter">
@@ -5813,6 +6180,21 @@
             <param name="pageIndex">Page with page index to save as image</param>
             <returns>Returns  page as Image</returns>
         </member>
+        <member name="M:Spire.Pdf.PdfDocumentBase.SaveAsImage(System.Int32,System.Single,System.Boolean)">
+            <summary>
+            Saves PDF document page as image
+            </summary>
+            <param name="pageIndex">Page with page index to save as image</param>
+            <param name="zoomFactor"></param>
+            <returns>Returns  page as Image</returns>
+        </member>
+        <member name="M:Spire.Pdf.PdfDocumentBase.SaveAsMetaImage(System.Int32)">
+            <summary>
+            Saves PDF document page as image
+            </summary>
+            <param name="pageIndex">Page with page index to save as image</param>
+            <returns>Returns  page as Image</returns>
+        </member>
         <member name="M:Spire.Pdf.PdfDocumentBase.SaveAsImage(System.Int32,System.Int32,System.Int32)">
             <summary>
              Saves PDF document page as image,set Dpi
@@ -5822,19 +6204,19 @@
             <param name="dpiY">Pictures Y resolution</param>
             <returns>Returns  page as Image</returns>
         </member>
-        <member name="M:Spire.Pdf.PdfDocumentBase.SaveAsMetaImage(System.IO.Stream,System.Int32)">
+        <member name="M:Spire.Pdf.PdfDocumentBase.SaveAsMetaImage(System.Boolean,System.Int32)">
             <summary>
             Saves PDF document page as image
             </summary>
-            <param name="stream">MemoryStream obj</param>
+            <param name="isWriteWarning">bool isWriteWarning</param>
             <param name="pageIndex">Page with page index to save as image</param>
             <returns>Returns  page as Image</returns>
         </member>
-        <member name="M:Spire.Pdf.PdfDocumentBase.SaveAsMetaImage(System.IO.Stream,System.Int32,System.Int32,System.Int32)">
+        <member name="M:Spire.Pdf.PdfDocumentBase.SaveAsMetaImage(System.Boolean,System.Int32,System.Int32,System.Int32)">
             <summary>
             Saves PDF document page as image,set Dpi
             </summary>
-            <param name="stream">MemoryStream obj</param>
+            <param name="isWriteWarning">bool isWriteWarning</param>
             <param name="pageIndex">Page with page index to save as image</param>
             <param name="dpiX">Pictures X resolution</param>
             <param name="dpiY">Pictures Y resolution</param>
@@ -6156,6 +6538,36 @@
             Initializes a new instance of the  class.
             </summary>
             <param name="text">The Barcode text.</param>
+        </member>
+        <member name="P:Spire.Pdf.Annotations.WidgetAppearance.ButtonLayoutMode">
+            <summary>
+            Gets or sets the button layout mode.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Annotations.WidgetAppearance.AlternateCaption">
+            <summary>
+            Gets or sets the text displayed when the mouse button is pressed within the annotation's active area.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Annotations.WidgetAppearance.RolloverCaption">
+            <summary>
+            Gets or sets the text displayed when the user rolls the cursor into the annotation's active area without pressing the mouse button.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Annotations.WidgetAppearance.NormalAppearance">
+            <summary>
+            Gets or sets the widget annotation's normal appearance displayed when it is not interacting with the user.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Annotations.WidgetAppearance.RolloverAppearance">
+            <summary>
+            Gets or sets the widget annotation's rollover appearance displayed when the user rolls the cursor into its active area without pressing the mouse button.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Annotations.WidgetAppearance.AlternateAppearance">
+            <summary>
+            Gets or sets the widget annotation's alternate appearance displayed when the mouse button is pressed within its active area.
+            </summary>
         </member>
         <member name="T:Spire.Pdf.Annotations.PdfActionAnnotation">
             <summary>
@@ -6518,6 +6930,11 @@
             Collection of loaded and created pages.
             </summary>
         </member>
+        <member name="M:Spire.Pdf.Widget.PdfDocumentWidget.FindAndCreateForm">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:Spire.Pdf.Widget.PdfDocumentWidget.#ctor(System.IO.Stream,System.Boolean)">
             <summary>
             Load from Stream ,And Used by PdfViewer-Asp
@@ -6525,18 +6942,27 @@
             <param name="file"></param>
             <param name="isDisposedStream"></param>
         </member>
+        <member name="M:Spire.Pdf.Widget.PdfDocumentWidget.#ctor(System.IO.Stream,System.String,System.Boolean)">
+            <summary>
+            Load from Stream  with password,And Used by PdfViewer-Asp
+            </summary>
+            <param name="file"></param>
+            <param name="password"></param>
+            <param name="isDisposedStream"></param>
+        </member>
         <member name="M:Spire.Pdf.Widget.PdfDocumentWidget.VerifySignature(System.String)">
             <summary>
             Verify PDF Document regarding signature.
             </summary>
             <param name="sigName">Signature field name.</param>
+            <returns>signature is validated return true,otherwise false</returns>
         </member>
         <member name="M:Spire.Pdf.Widget.PdfDocumentWidget.VerifyDocModified(System.String)">
             <summary>
             Check if the document was altered after signed. True if modified; otherwise false.
             </summary>
             <param name="signName">Signature field name.</param>
-            <returns></returns>
+            <returns>signature is validated return false,otherwise true</returns>
         </member>
         <member name="M:Spire.Pdf.Widget.PdfDocumentWidget.GetSignatureFieldWidget(Spire.Pdf.Widget.PdfFormWidget,System.String)">
             <summary>
@@ -6571,6 +6997,13 @@
             Get PDF Document regarding signature.
             </summary>
             <param name="sigName">Signature field name.</param>
+        </member>
+        <member name="M:Spire.Pdf.Widget.PdfDocumentWidget.GetSignatureDicitionary(System.String)">
+            <summary>
+            Get the signature dictionary
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
         </member>
         <member name="M:Spire.Pdf.Widget.PdfDocumentWidget.getContents(Spire.Pdf.Primitives.PdfArray)">
             <summary>
@@ -6780,6 +7213,53 @@
             <summary>
             The actual bounds of the html view. It may larger than Bounds
             </summary>
+        </member>
+        <member name="T:Spire.Pdf.General.Render.ImageQualityMode">
+            <summary>
+            specify image quality level
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.General.Render.ImageQualityMode.Default">
+            <summary>
+            default quality
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.General.Render.ImageQualityMode.HighQuality">
+            <summary>
+            high quality
+            </summary>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.Font.Type1CFont.GetGlyphById(System.Int32)">
+            <summary>
+             Get a glyph outline by glyphId
+            </summary>
+            <param name="glyphId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.Font.Type1CFont.GetGlyphById(System.Int32,System.String,System.Single)">
+            <summary>
+            Get a glyph outline by glyphId or name
+            </summary>
+            <param name="glyphId"></param>
+            <param name="name"></param>
+            <param name="width"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.Font.Type1CFont.FindoffsetfromEncode(System.Char,Spire.Pdf.General.TypeEncodingCmap)">
+            <summary>
+            
+            </summary>
+            <param name="src"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.Font.Type1CFont.FindIndexFormEncodeByCharName(Spire.Pdf.General.TypeEncodingCmap,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="type"></param>
+            <param name="charName"></param>
+            <returns></returns>
         </member>
         <member name="T:Spire.Pdf.General.Render.Font.TrueTypeFont.IFont">
             <summary>
@@ -7065,6 +7545,21 @@
             <param name="cFunction">Must be one of "AVG", "SUM", "PRD", "MIN", "MAX"</param>
             <param name="cFields">The name list of the fields to use in the calculation</param>
         </member>
+        <member name="F:Spire.Compression.Zip.Constants.EndOfCentralRecordBaseSize">
+            <summary>
+            Size of end of central record (excluding variable fields)
+            </summary>
+        </member>
+        <member name="F:Spire.Compression.Zip.Constants.Zip64CentralDirLocatorSignature">
+            <summary>
+            Signature for Zip64 central directory locator
+            </summary>
+        </member>
+        <member name="F:Spire.Compression.Zip.Constants.Zip64CentralFileHeaderSignature">
+            <summary>
+            Signature for Zip64 central file header
+            </summary>
+        </member>
         <member name="T:Spire.Pdf.Tables.PdfTableLayoutFormat">
             <summary>
             Represents the parameters for Light Table layout.
@@ -7131,9 +7626,14 @@
             Specifies the available permissions set for the signature.
             </summary>
         </member>
+        <member name="F:Spire.Pdf.Security.PdfPermissionsFlags.None">
+            <summary>
+            Not all permissions
+            </summary>
+        </member>
         <member name="F:Spire.Pdf.Security.PdfPermissionsFlags.Default">
             <summary>
-            Default value.
+            Default value is 2876. A common document contains all privileges
             </summary>
         </member>
         <member name="F:Spire.Pdf.Security.PdfPermissionsFlags.Print">
@@ -7254,6 +7754,11 @@
             will be invalidated and requiring explicit confirmation before continuing with the operation.
             </summary>
         </member>
+        <member name="T:Spire.Pdf.Security.SignInfoType">
+            <summary>
+            Signature type
+            </summary>
+        </member>
         <member name="T:Spire.Pdf.Security.ConfiguerGraphicType">
             <summary>
             Signture Configuer Graphic type
@@ -7287,6 +7792,11 @@
         <member name="F:Spire.Pdf.Security.ConfiguerGraphicType.SignInformationPicture">
             <summary>
             draw  Information and Picture Signature
+            </summary>
+        </member>
+        <member name="T:Spire.Pdf.Security.SignatureConfiguerText">
+            <summary>
+            Configuer Text,Show Sign content
             </summary>
         </member>
         <member name="T:Spire.Pdf.Graphics.PdfLinearGradientBrush">
@@ -8515,6 +9025,15 @@
         <member name="T:Spire.Pdf.General.Paper.Drawing.Rendering.Dml.Styles.DmlFontReference">
             This element represents a reference to a themed font. 
         </member>
+        <member name="M:Spire.Pdf.General.Paper.Drawing.Fonts.TrueType.TTFont.UTF16ToUCS4(System.Char[],System.Int32,System.UInt32@)">
+            <summary>  
+            转换UTF16编码到UCS4编码  
+            </summary>  
+            <param name="UTF16">要转换的UTF16编码数组</param>  
+            <param name="index">要转换的起始索引位置</param>  
+            <param name="UCS4">要输出的UCS4编码</param>  
+            <returns>数组中参与编码转换的单元数</returns>   
+        </member>
         <member name="P:Spire.Pdf.General.Paper.Drawing.Fonts.TrueType.TTFont.Panose">
             <summary>
             Represents 10 byte series of numbers is used to describe the visual characteristics of a given typeface. 
@@ -8963,24 +9482,6 @@
             </summary>
             <returns>The created template.</returns>
         </member>
-        <member name="M:Spire.Pdf.PdfPageBase.ExtractTextWithComplexity">
-            <summary>
-            Extracts text from the given PDF Page.
-            </summary>
-            <returns>The Extracted Text.</returns>
-        </member>
-        <member name="M:Spire.Pdf.PdfPageBase.ExtractText">
-            <summary>
-            Extracts text from the given PDF Page.
-            </summary>
-            <returns>The Extracted Text.</returns>
-        </member>
-        <member name="M:Spire.Pdf.PdfPageBase.ExtractText(System.Boolean)">
-            <summary>
-            Extracts text from the given PDF Page.
-            </summary>
-            <returns>The Extracted Text.</returns>
-        </member>
         <member name="F:Spire.Pdf.PdfPageBase.finds">
             <summary>
             Text search result
@@ -9007,10 +9508,43 @@
         </member>
         <member name="M:Spire.Pdf.PdfPageBase.ExecuteCommandFindText(System.String,Spire.Pdf.Exporting.XObjectElement,Spire.Pdf.General.Render.PdfElement.PdfRecordCollection)">
             <summary>
+            
+            </summary>
+            <param name="searchPatternText"></param>
+            <param name="parentObj"></param>
+            <param name="records"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.PdfPageBase.ExecuteCommandFindTextWithInvariantCulture(System.String,Spire.Pdf.Exporting.XObjectElement,Spire.Pdf.General.Render.PdfElement.PdfRecordCollection)">
+            <summary>
             Find text in page
             </summary>
             <param name="searchPatternText">The text which is to be searched  </param>
             <returns>The result which has already been searched </returns>
+        </member>
+        <member name="M:Spire.Pdf.PdfPageBase.GetColorspace(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="colorElement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.PdfPageBase.GetColorFromColorspace(System.String[],System.String,Spire.Pdf.General.Render.ColorSpace.PDFColorSpace)">
+            <summary>
+            
+            </summary>
+            <param name="colorElement"></param>
+            <param name="type"></param>
+            <param name="colorSpace"></param>
+        </member>
+        <member name="M:Spire.Pdf.PdfPageBase.ApplyStrokingColor(System.String,System.Single[])">
+            <summary>
+            Apply Color
+            </summary>
+            <param name="type"></param>
+            <param name="colorRed"></param>
+            <param name="colorGreen"></param>
+            <param name="colorBlue"></param>
         </member>
         <member name="M:Spire.Pdf.PdfPageBase.GetFindTextFromXObject(System.String[],Spire.Pdf.Exporting.PdfPageResources,Spire.Pdf.Exporting.XObjectElement)">
             <summary>
@@ -9018,6 +9552,18 @@
             </summary>
             <param name="xobjectElement">string[] xobjectElement</param>
             <param name="m_pageResources">Spire.Pdf.Exporting.PdfPageResources m_pageResources</param>
+        </member>
+        <member name="M:Spire.Pdf.PdfPageBase.ExtractText(System.Boolean)">
+            <summary>
+            Extracts text from the given PDF Page.
+            </summary>
+            <returns>The Extracted Text.</returns>
+        </member>
+        <member name="M:Spire.Pdf.PdfPageBase.ExtractTextWithComplexity">
+            <summary>
+            Extracts text from the given PDF Page.
+            </summary>
+            <returns>The Extracted Text.</returns>
         </member>
         <member name="M:Spire.Pdf.PdfPageBase.ExtractImages">
             <summary>
@@ -9145,6 +9691,11 @@
             Gets or sets page's background color.
             </summary>
         </member>
+        <member name="P:Spire.Pdf.PdfPageBase.BackgroundRegion">
+            <summary>
+            The position and size of the background 
+            </summary>
+        </member>
         <member name="P:Spire.Pdf.PdfPageBase.Spire#Pdf#Interfaces#IPdfWrapper#Element">
             <summary>
             Gets the wrapped element.
@@ -9170,6 +9721,11 @@
         <member name="P:Spire.Pdf.PdfPageWidget.Size">
             <summary>
             Gets the size of the page.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.PdfPageWidget.ActualSize">
+            <summary>
+            Get the visible region of the page.
             </summary>
         </member>
         <member name="P:Spire.Pdf.PdfPageWidget.Document">
@@ -10814,6 +11370,26 @@
             
             </summary>
         </member>
+        <member name="F:Spire.Pdf.General.Render.PdfToImageRenderer.m_UserToDeviceSpaceTransform">
+            <summary>
+            mapping Transform from user space to device space 
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.General.Render.PdfToImageRenderer.m_TjAfterIsTranslate">
+            <summary>
+            Determine whether there is Tj in front of Td,TD,cm,T* ,TL,Tw,Tc,Tz. if not ,you need to calculate the translation
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.General.Render.PdfToImageRenderer.m_UserDefinedTextMatrix">
+            <summary>
+            Save the translation data
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.General.Render.PdfToImageRenderer.m_SaveCurrentTmMatrix">
+            <summary>
+            From BT,save the current Tm matrix
+            </summary>
+        </member>
         <member name="F:Spire.Pdf.General.Render.PdfToImageRenderer.m_textLeading">
             <summary>
             Text leading
@@ -10928,6 +11504,12 @@
             <param name="mode"></param>
             <param name="Type3FontPath"></param>
         </member>
+        <member name="M:Spire.Pdf.General.Render.PdfToImageRenderer.SetBoxRectangle(System.String[])">
+            <summary>
+            Get Rectangle from pdf command.
+            </summary>
+            <param name="rectangle"></param>
+        </member>
         <member name="M:Spire.Pdf.General.Render.PdfToImageRenderer.GetClipRectangle(System.String[])">
             <summary>
             Get Rectangle from pdf dictionary.
@@ -10949,14 +11531,44 @@
             <param name="colorGreen"></param>
             <param name="colorBlue"></param>
         </member>
-        <member name="M:Spire.Pdf.General.Render.PdfToImageRenderer.RenderAsImage">
+        <member name="M:Spire.Pdf.General.Render.PdfToImageRenderer.GetXObjectFromAnnotationsAp(System.String[])">
+             <summary>
+            Get Resources obj from Xobject
+             </summary>
+             <param name="xobjectElement"></param>
+             <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.PdfToImageRenderer.RenderForAnnotationsAp">
+            <summary>
             
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.PdfToImageRenderer.AddInsetForAP(Spire.Pdf.Primitives.PdfDictionary,System.Drawing.RectangleF,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="annotElements"></param>
+            <param name="rect"></param>
+            <param name="annotType"></param>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.PdfToImageRenderer.GetFontInfoFromDA(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="DAstring"></param>
+            <returns></returns>
         </member>
         <member name="M:Spire.Pdf.General.Render.PdfToImageRenderer.ExecuteCommand(Spire.Pdf.General.Render.PdfElement.PdfRecord)">
             <summary>
             Execute pdf command.
             </summary>
             <param name="record"></param>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.PdfToImageRenderer.RestoreAnnotsGraphicObjectData">
+            <summary>
+            initialize annot state
+            </summary>
         </member>
         <member name="M:Spire.Pdf.General.Render.PdfToImageRenderer.RenderTextElement(System.String[],System.String)">
             <summary>
@@ -10974,6 +11586,24 @@
             <param name="decodedText"></param>
             <param name="increaseWidth"></param>
         </member>
+        <member name="P:Spire.Pdf.General.Render.PdfToImageRenderer.BoxRectangle">
+             <summary>
+            set Box Rectangle,when dictionary FT=Tx
+             </summary>
+        </member>
+        <member name="P:Spire.Pdf.General.Render.PdfToImageRenderer.FormFieldFT">
+             <summary>
+            set FT type from form field
+             </summary>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.PdfElement.XObjectElement.ReplaceResources(Spire.Pdf.Primitives.PdfDictionary,System.String,Spire.Pdf.Interfaces.IPdfPrimitive)">
+            <summary>
+            
+            </summary>
+            <param name="xObjDictionary"></param>
+            <param name="CmdParameters"></param>
+            <param name="newObj"></param>
+        </member>
         <member name="M:Spire.Pdf.General.Render.PdfElement.XObjectElement.GetPdfPageResources">
             <summary>
             
@@ -10988,6 +11618,14 @@
             <param name="resources"></param>
             <param name="imageRender"></param>
         </member>
+        <member name="M:Spire.Pdf.General.Render.PdfElement.XObjectElement.RenderXobjectTilingPatternBrush(System.Drawing.Graphics,Spire.Pdf.General.Render.PdfElement.PdfPageResources,Spire.Pdf.General.Render.Page)">
+            <summary>
+            Bug654
+            </summary>
+            <param name="g"></param>
+            <param name="resources"></param>
+            <param name="page"></param>
+        </member>
         <member name="M:Spire.Pdf.General.Render.PdfElement.XObjectElement.Render(Spire.Pdf.General.Render.PdfElement.PdfPageResources)">
             <summary>
             get PdfRecordCollection from resources
@@ -11001,6 +11639,19 @@
             </summary>
             <param name="g"></param>
             <param name="dictionary"></param>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.PdfElement.XObjectElement.RenderForAnnotationsAp(Spire.Pdf.General.Render.PdfElement.PdfPageResources)">
+            <summary>
+            for Ap Resources
+            </summary>
+            <param name="resources"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.General.Paper.Word.Doc.StreamsController.SetEmbedFontTag(System.IO.Stream)">
+            <summary>
+            write embedFont tag
+            </summary>
+            <param name="stream"></param>
         </member>
         <member name="T:Spire.Pdf.Fields.PdfTextBoxField">
             <summary>
@@ -11577,6 +12228,13 @@
             Gets or sets the  at the specified index.
             </summary>
         </member>
+        <member name="M:Spire.Pdf.Exporting.XPS.Renderer.XPStoPDFRenderer.GetIntArraySpiltIndices(System.String)">
+            <summary>
+            Bug897
+            </summary>
+            <param name="Indices"></param>
+            <returns></returns>
+        </member>
         <member name="M:Spire.Pdf.Exporting.XPS.Renderer.XPStoPDFRenderer.DrawAlternateContent(Spire.Pdf.Exporting.XPS.Schema.Mc.AlternateContent)">
             <summary>
             Converts the alternateContent graphics to PDF graphics.
@@ -11759,7 +12417,7 @@
         </member>
         <member name="P:Spire.Pdf.Tables.PdfTable.DataSourceType">
             <summary>
-            Gets or sets the datasource type of the PdfLightTable
+            Gets or sets the datasource type of the PdfTable
             </summary>
         </member>
         <member name="P:Spire.Pdf.Tables.PdfTable.Style">
@@ -11770,7 +12428,7 @@
         <member name="P:Spire.Pdf.Tables.PdfTable.IgnoreSorting">
             <summary>
             Gets or sets a value indicating whether
-            PdfLightTable should ignore sorting in data table.
+            PdfTable should ignore sorting in data table.
             </summary>
         </member>
         <member name="P:Spire.Pdf.Tables.PdfTable.AllowCrossPages">
@@ -11815,7 +12473,7 @@
         </member>
         <member name="T:Spire.Pdf.Tables.PdfTableStyle">
             <summary>
-            Represents parameters of PdfLightTable.
+            Represents parameters of PdfTable.
             </summary>
         </member>
         <member name="M:Spire.Pdf.Tables.PdfTableStyle.#ctor">
@@ -12017,7 +12675,7 @@
         </member>
         <member name="T:Spire.Pdf.Tables.PdfTableException">
             <summary>
-            Represents as a message deliverer from PdfLightTable class to the user.
+            Represents as a message deliverer from PdfTable class to the user.
             </summary>
         </member>
         <member name="T:Spire.Pdf.Lists.PdfListItemCollection">
@@ -12257,6 +12915,27 @@
             Performs application-defined tasks associated with freeing,
             releasing, or resetting unmanaged resources.
             </summary>
+        </member>
+        <member name="M:Spire.Pdf.Graphics.PdfBitmap.CanSaveAsRawImageForIndexedFormat">
+            <summary>
+            define method "SaveAsRawImageForIndexedFormat" supported IndexedFormat
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.Graphics.PdfBitmap.SaveAsRawImageForIndexedFormat">
+            <summary>
+            save indexed bitmap to raw image
+            support PixelFormat: Format1bppIndexed Format4bppIndexed Format8bppIndexed
+            </summary>
+        </member>
+        <member name="M:Spire.Pdf.Graphics.PdfBitmap.SetBit(System.Byte,System.Int32,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+            <param name="index"></param>
+            <param name="flag"></param>
+            <returns></returns>
         </member>
         <member name="P:Spire.Pdf.Graphics.PdfBitmap.ActiveFrame">
             <summary>
@@ -13074,17 +13753,34 @@
             </summary>
             <value>a  object representing the page which is added in the document.</value>
         </member>
-        <member name="M:Spire.Pdf.General.Render.Page.CreatePageBuffer(System.Single,System.Boolean)">
+        <member name="M:Spire.Pdf.General.Render.Page.DrawHighLight(System.Drawing.Graphics,System.String,System.Single,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="graphic"></param>
+            <param name="findText"></param>
+            <param name="x"></param>
+            <param name="y"></param>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.Page.CreatePageBuffer">
+            <summary>
+             Create Page iamge Buffer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.Page.CreatePageBuffer(System.Boolean,System.Single,System.Boolean)">
             <summary>
             Create Page iamge Buffer,it's eastAsianFont
             </summary>
+            <param name="isWriteWarning">bool isWriteWarning</param>
             <param name="zoomFactor">float zoomFactor</param>
             <param name="eastAsianFont">bool eastAsianFont</param>
         </member>
-        <member name="M:Spire.Pdf.General.Render.Page.CreatePageBuffer(System.Single,System.Int32,System.Int32)">
+        <member name="M:Spire.Pdf.General.Render.Page.CreatePageBuffer(System.Boolean,System.Single,System.Int32,System.Int32)">
             <summary>
             Create Page iamge Buffer
             </summary>
+            <param name="isWriteWarning">bool isWriteWarning</param>
             <param name="zoomFactor">float zoomFactor</param>
             <param name="dpiX">int dpiX</param>
             <param name="dpiY">int dpiY</param>
@@ -13098,6 +13794,22 @@
             <param name="dpiX">Bitmap dpiX</param>
             <param name="dpiY">Bitmap dpiY</param>
             <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.Page.CheckEvalExpired(System.Drawing.Graphics)">
+            <summary>
+            write Warning info
+            </summary>
+            <param name="graphics"></param>
+        </member>
+        <member name="P:Spire.Pdf.General.Render.Page.FindText">
+            <summary>
+            Set find text
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.General.Render.Page.FindTextHighLightColor">
+            <summary>
+            find text color
+            </summary>
         </member>
         <member name="F:Spire.Pdf.General.Render.Font.OpenTypeFile.Table_name.PLATFORMID_UNICODE">
              <summary>
@@ -13284,6 +13996,43 @@
             Initializes a new instance of the  class.
             </summary>
             <param name="text">The Barcode Text.</param>
+        </member>
+        <member name="T:Spire.Pdf.Annotations.PdfPolygonAnnotation">
+            <summary>
+            Represents the polygon annotation.
+            </summary>
+        </member>
+        <member name="M:Spire.Pdf.Annotations.PdfPolygonAnnotation.#ctor(Spire.Pdf.PdfPageBase,System.Drawing.PointF[])">
+            <summary>
+            Initialize a new instance of PdfPolygonAnnotation.
+            </summary>
+            <param name="page">The page</param>
+            <param name="points">The polygon vertices</param>
+        </member>
+        <member name="P:Spire.Pdf.Annotations.PdfPolygonAnnotation.Author">
+            <summary>
+            The user who created the annotation.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Annotations.PdfPolygonAnnotation.Subject">
+            <summary>
+            The description of the annotation.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Annotations.PdfPolygonAnnotation.Vertices">
+            <summary>
+            The vertice coordinates.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Annotations.PdfPolygonAnnotation.ModifiedDate">
+            <summary>
+            The date and time when the annotation was most recently modified.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Annotations.PdfPolygonAnnotation.BorderEffect">
+            <summary>
+            The border effect.
+            </summary>
         </member>
         <member name="T:Spire.Pdf.Annotations.Pdf3DRendermode">
             <summary>
@@ -13793,6 +14542,11 @@
             to this property changes.</remarks>
             <value>The  of the document.</value>
         </member>
+        <member name="P:Spire.Pdf.PdfNewDocument.IsMergedDocument">
+            <summary>
+            Indicates the document is a merged document or not, defalut value: false.
+            </summary>
+        </member>
         <member name="P:Spire.Pdf.PdfNewDocument.Conformance">
             <summary>
             Gets or Sets the Pdf Conformance level.
@@ -13870,6 +14624,13 @@
             Check table name does not exist
             </summary>
             <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.Graphics.TtfReader.GetGlyphCharCode(System.Int32)">
+            <summary>
+            Get CharCode
+            </summary>
+            <param name="glyphIndex"></param>
             <returns></returns>
         </member>
         <member name="T:Spire.Pdf.Graphics.PdfTextWidget">
@@ -15021,6 +15782,11 @@
             </summary>
             <value>The current.</value>
         </member>
+        <member name="F:Spire.Pdf.Primitives.PdfName.m_originalvalue">
+            <summary>
+            Value of the element.By Bug735
+            </summary>
+        </member>
         <member name="T:Spire.Pdf.General.PdfEmbeddedFileSpecification">
             <summary>
             Represents specification of embedded file.
@@ -15191,6 +15957,49 @@
             Represents field collection of loaded form.
             </summary>
         </member>
+        <member name="M:Spire.Pdf.Widget.PdfFormFieldWidgetCollection.AddFormField(Spire.Pdf.Fields.PdfField)">
+            <summary>
+            Add field
+            </summary>
+            <param name="field"></param>
+        </member>
+        <member name="M:Spire.Pdf.Widget.PdfFormFieldWidgetCollection.GetField(System.Int32)">
+            <summary>
+            Gets the field.
+            </summary>
+            <param name="index">int index</param>
+            <returns>The created field.</returns>
+        </member>
+        <member name="M:Spire.Pdf.Widget.PdfFormFieldWidgetCollection.GetFieldNameByExportValue(System.String)">
+            <summary>
+            Get FieldName from FormWidget by exportValue
+            </summary>
+            <param name="exportValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.Widget.PdfFormFieldWidgetCollection.GetFieldNameByExportValue(Spire.Pdf.Primitives.PdfDictionary,System.String)">
+            <summary>
+            Get filedName from FiledWeiget
+            </summary>
+            <param name="dic"></param>
+            <param name="exportValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.Widget.PdfFormFieldWidgetCollection.FindExportValueFromAP(Spire.Pdf.Primitives.PdfDictionary,System.String)">
+            <summary>
+            find exportValue from AP  By exportValue
+            </summary>
+            <param name="dicAP"></param>
+            <param name="exportValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.Widget.PdfFormFieldWidgetCollection.GetFieldsByExportValue(System.String)">
+            <summary>
+            Get Fields from FormWidget by exportValue
+            </summary>
+            <param name="exportValue"></param>
+            <returns></returns>
+        </member>
         <member name="P:Spire.Pdf.Widget.PdfFormFieldWidgetCollection.Item(System.Int32)">
             <summary>
             Gets the  at the specified index.
@@ -15259,9 +16068,19 @@
             Gets or sets the factors array.
             </summary>
         </member>
+        <member name="M:Spire.Pdf.General.Render.ViewLayer.IPresenter.DisposeBrush">
+            <summary>
+            Dispose ImageBrush
+            </summary>
+        </member>
         <member name="P:Spire.Pdf.General.Render.ViewLayer.IPresenter.TextureBrush">
             <summary>
             used in pdf2xps when it has pattern
+            </summary>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.ViewLayer.Presenter.DisposeBrush">
+            <summary>
+            Dispose ImageBrush
             </summary>
         </member>
         <member name="T:Spire.Pdf.General.Render.ColorSpace.ColorCache">
@@ -15292,6 +16111,146 @@
             Gets or sets the caption text.
             </summary>
             <value>The caption text.</value>
+        </member>
+        <member name="P:Spire.Pdf.Fields.PdfButtonField.LayoutMode">
+            <summary>
+            Gets or sets the button layout mode.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Fields.PdfButtonField.AlternateText">
+            <summary>
+            Gets or sets the text displayed when the mouse button is pressed within the annotation's active area, only available in Push mode.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Fields.PdfButtonField.RolloverText">
+            <summary>
+            Gets or sets the text displayed when the user rolls the cursor into the annotation's active area without pressing the mouse button, only available in Push mode.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Fields.PdfButtonField.IconLayout">
+            <summary>
+            Defining the icon layout.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Fields.PdfButtonField.Icon">
+            <summary>
+            Gets or sets the widget annotation's normal icon displayed when it is not interacting with the user.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Fields.PdfButtonField.AlternateIcon">
+            <summary>
+            Gets or sets the widget annotation's alternate icon displayed when the mouse button is pressed within its active area, only available in Push mode.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Fields.PdfButtonField.RolloverIcon">
+            <summary>
+            Gets or sets the widget annotation's rollover icon displayed when the user rolls the cursor into its active area without pressing the mouse button, only available in Push mode.
+            </summary>
+        </member>
+        <member name="T:Spire.Pdf.Fields.PdfButtonIconLayout">
+            <summary>
+            Represents the button icon layout options.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Fields.PdfButtonIconLayout.ScaleReason">
+            <summary>
+            Gets or sets the circumstances under which the icon shall be scaled inside the annotation rectangle.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Fields.PdfButtonIconLayout.Spaces">
+            <summary>
+            Gets or sets an array of two numbers between 0.0 and 1.0 indicating the fraction of leftover space to allocate at the left and bottom of the icon.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Fields.PdfButtonIconLayout.IsFitBounds">
+            <summary>
+            If true, indicates that the button appearance should be scaled to fit fully within the bounds of the annotation without taking into consideration the line width of the border.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Fields.PdfButtonIconLayout.ScaleMode">
+            <summary>
+            Gets or sets the type of scaling to use.
+            </summary>
+        </member>
+        <member name="T:Spire.Pdf.Fields.PdfButtonIconScaleMode">
+            <summary>
+            Represents the type of scaling to use.
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Fields.PdfButtonIconScaleMode.Anamorphic">
+            <summary>
+            Scale the icon to fill the annotation rectangle exactly, without regard to its original aspect ratio.
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Fields.PdfButtonIconScaleMode.Proportional">
+            <summary>
+            Scale the icon to fit the width or height of the annotation rectangle while maintaining the icon's original aspect ratio.
+            </summary>
+        </member>
+        <member name="T:Spire.Pdf.Fields.PdfButtonLayoutMode">
+            <summary>
+            Represents the button layout mode.
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Fields.PdfButtonLayoutMode.CaptionOnly">
+            <summary>
+            No icon; caption only.
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Fields.PdfButtonLayoutMode.IconOnly">
+            <summary>
+            No caption; icon only.
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Fields.PdfButtonLayoutMode.CaptionBelowIcon">
+            <summary>
+            Caption below the icon.
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Fields.PdfButtonLayoutMode.CaptionAboveIcon">
+            <summary>
+            Caption above the icon.
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Fields.PdfButtonLayoutMode.CaptionRightOfIcon">
+            <summary>
+            Caption to the right of the icon.
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Fields.PdfButtonLayoutMode.CaptionLeftOfIcon">
+            <summary>
+            Caption to the left of the icon,
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Fields.PdfButtonLayoutMode.CaptionOverlayIcon">
+            <summary>
+            Caption overlaid directly on the icon.
+            </summary>
+        </member>
+        <member name="T:Spire.Pdf.Fields.PdfButtonIconScaleReason">
+            <summary>
+            Represtents the circumstances under which the icon shall be scaled inside the annotation rectangle.
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Fields.PdfButtonIconScaleReason.Always">
+            <summary>
+            Always scale.
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Fields.PdfButtonIconScaleReason.IconIsBigger">
+            <summary>
+            Scale only when the icon is bigger than the annotation rectangele.
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Fields.PdfButtonIconScaleReason.IconIsSmaller">
+            <summary>
+            Scale only when the icon is smaller than the annotation rectangle.
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.Fields.PdfButtonIconScaleReason.Never">
+            <summary>
+            Never scale.
+            </summary>
         </member>
         <member name="P:Spire.Pdf.Fields.IPdfComboBoxField.Editable">
             <summary>
@@ -16334,6 +17293,19 @@
             <param name="page">The page.</param>
             <param name="location">The location.</param>
         </member>
+        <member name="M:Spire.Pdf.General.PdfDestination.#ctor(System.Int32,System.Drawing.PointF,System.Single)">
+            <summary>
+            Initializes a new instance of PdfDestination.
+            </summary>
+            <param name="pageNumber">The zero based page number.</param>
+            <param name="location">The location in the page based on the lower-left coordinate system.</param>
+            <param name="zoom">The zoom factor.</param>
+        </member>
+        <member name="P:Spire.Pdf.General.PdfDestination.PageNumber">
+            <summary>
+            The zero based page number.
+            </summary>
+        </member>
         <member name="P:Spire.Pdf.General.PdfDestination.Zoom">
             <summary>
             Gets or sets zoom factor.
@@ -16588,6 +17560,16 @@
             <param name="page">The current page.</param>
             <returns>Index of the page in the document if exists, -1 otherwise.</returns>
         </member>
+        <member name="M:Spire.Pdf.Widget.PdfPageCollection.ForeachKids(Spire.Pdf.Primitives.PdfDictionary,System.Int32,System.Int32@,System.Int32@)">
+            <summary>
+            foreach Nodes,find page
+            </summary>
+            <param name="node"></param>
+            <param name="index"></param>
+            <param name="currentIndex"></param>
+            <param name="localIndex"></param>
+            <returns></returns>
+        </member>
         <!-- Badly formed XML comment ignored for member "M:Spire.Pdf.Widget.PdfPageCollection.GetEnumerator" -->
         <member name="E:Spire.Pdf.Widget.PdfPageCollection.PageAdded">
             <summary>
@@ -16625,6 +17607,11 @@
             WebBrowser load Complete
             </summary>
         </member>
+        <member name="F:Spire.Pdf.HtmlConverter.HtmlConverter.m_PageSettings">
+            <summary>
+            Gets or sets page settings of the section.
+            </summary>
+        </member>
         <member name="F:Spire.Pdf.HtmlConverter.HtmlConverter.start">
             <summary>
             Get html page  start time
@@ -16648,6 +17635,11 @@
         <member name="P:Spire.Pdf.HtmlConverter.HtmlConverter.LoadComplete">
             <summary>
             WebBrowser load Complete
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.HtmlConverter.HtmlConverter.PageSettings">
+            <summary>
+            Gets or sets page settings of the section.
             </summary>
         </member>
         <member name="T:Spire.Pdf.HtmlConverter.Clip">
@@ -18229,6 +19221,11 @@
             Represents base class form's list fields.
             </summary>
         </member>
+        <member name="F:Spire.Pdf.Fields.PdfListField.m_commitOnSelChange">
+            <summary>
+            Internal variable to store CommitOnSelChange flag.
+            </summary>
+        </member>
         <member name="M:Spire.Pdf.Fields.PdfListField.#ctor(Spire.Pdf.PdfPageBase,System.String)">
             <summary>
             Initializes a new instance of the  class.
@@ -18259,6 +19256,11 @@
             Gets the first selected item in the list.
             </summary>
             <value>The selected item.</value>
+        </member>
+        <member name="P:Spire.Pdf.Fields.PdfListField.CommitOnSelChange">
+            <summary>
+            Gets or sets the flag indicating if a new value selected is committed immediately without waiting to leave the field.
+            </summary>
         </member>
         <member name="M:Spire.Pdf.Fields.PdfComboBoxField.#ctor(Spire.Pdf.PdfPageBase,System.String)">
             <summary>
@@ -19672,6 +20674,11 @@
             contents will be reliably reproduced in the repress environment.
             </summary>
         </member>
+        <member name="F:Spire.Pdf.PdfConformanceLevel.Pdf_A1A">
+            <summary>
+            PDF/A-1a ensures the preservation of a document's logical structure and con-tent text stream in natural reading order. 
+            </summary>
+        </member>
         <member name="T:Spire.Pdf.PrintScalingMode">
             <summary>
             Specifies the different page scaling option that shall be selected when a print dialog is displayed for this document.
@@ -19883,6 +20890,34 @@
         <member name="P:Spire.Pdf.Annotations.PdfLineAnnotation.BackColor">
             <summary>
             Gets or sets Background Color of the PdfLine
+            </summary>
+        </member>
+        <member name="T:Spire.Pdf.Actions.PdfEmbeddedGoToAction">
+            <summary>
+            Represents an embedded go-to action which allows jumping to or from a PDF file that is embedded in another PDF file.
+            </summary>
+        </member>
+        <member name="M:Spire.Pdf.Actions.PdfEmbeddedGoToAction.#ctor(System.String,Spire.Pdf.General.PdfDestination,System.Boolean)">
+            <summary>
+            Initialize a new instance of PdfEmbeddedGoToAction.
+            </summary>
+            <param name="fileName">The target PDF file name to be opened.</param>
+            <param name="dest">The destination.</param>
+            <param name="newWindow">If true, the target PDF would be opened in a new window.Otherwise false.</param>
+        </member>
+        <member name="P:Spire.Pdf.Actions.PdfEmbeddedGoToAction.IsNewWindow">
+            <summary>
+            Indicates the target document should be opened in a new window or not.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Actions.PdfEmbeddedGoToAction.FileName">
+            <summary>
+            The target document name.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.Actions.PdfEmbeddedGoToAction.Destination">
+            <summary>
+            The destination in the target document to jump to.
             </summary>
         </member>
         <member name="T:Spire.Pdf.Exporting.XPS.Reader.XPSElementType">
@@ -20488,16 +21523,23 @@
             Represents a separation colorspace
             </summary>
         </member>
-        <member name="M:Spire.Pdf.ColorSpace.PdfSeparationColorSpace.#ctor">
+        <member name="M:Spire.Pdf.ColorSpace.PdfSeparationColorSpace.#ctor(System.String,Spire.Pdf.Graphics.PdfRGBColor)">
             <summary>
-            Initializes a new instance of the  class.
+            Initializes a new instance of the PdfSeparationColorSpace class.
             </summary>
+            <param name="colorant">The name of the colorant</param>
+            <param name="baseColor">The base color to be used</param>
         </member>
         <member name="M:Spire.Pdf.ColorSpace.PdfSeparationColorSpace.GetProfileData">
             <summary>
             Get the profile data.
             </summary>
             <returns>The profile data</returns>
+        </member>
+        <member name="P:Spire.Pdf.ColorSpace.PdfSeparationColorSpace.BaseColor">
+            <summary>
+            The base color to be used.
+            </summary>
         </member>
         <member name="P:Spire.Pdf.ColorSpace.PdfSeparationColorSpace.AlternateColorSpaces">
             <summary>
@@ -20507,9 +21549,8 @@
         </member>
         <member name="P:Spire.Pdf.ColorSpace.PdfSeparationColorSpace.Colorant">
             <summary>
-            Gets or sets the colorant represented by this separation colorspace. 
+            The name of the colorant.
             </summary>
-            <value>The name of the colorant.</value>
         </member>
         <member name="P:Spire.Pdf.ColorSpace.PdfSeparationColorSpace.TintTransform">
             <summary>
@@ -20522,18 +21563,17 @@
             Represents a separation color, based on a separation colorspace. 
             </summary>
         </member>
-        <member name="M:Spire.Pdf.ColorSpace.PdfSeparationColor.#ctor(Spire.Pdf.ColorSpace.PdfColorSpaces)">
+        <member name="M:Spire.Pdf.ColorSpace.PdfSeparationColor.#ctor(Spire.Pdf.ColorSpace.PdfColorSpaces,System.Single)">
             <summary>
             Initializes a new instance of the  class.
             </summary>
             <param name="colorspace">The colorspace.</param>
+            <param name="tint">The acceptable range for this value is [0.0 1.0]. 0.0 means the lightest color that can be achieved, and 1.0 means the darkest color.</param>
         </member>
         <member name="P:Spire.Pdf.ColorSpace.PdfSeparationColor.Tint">
             <summary>
-            Gets or sets the Tint Value.
+            The acceptable range for this value is [0.0 1.0]. 0.0 means the lightest color that can be achieved, and 1.0 means the darkest color.
             </summary>
-            <value>A float value specifying the tint of this color.</value>
-            <remarks>The acceptable range for this value is [0.0 1.0]. 0.0 means the lightest color that can be achieved, and 1.0 means the darkest color.</remarks>
         </member>
         <member name="T:Spire.Pdf.ColorSpace.PdfKnownColorSpace">
             <summary>
@@ -21763,6 +22803,12 @@
             Represents a button field of an existing PDF document`s form.
             </summary>
         </member>
+        <member name="M:Spire.Pdf.Widget.PdfButtonWidgetFieldWidget.SetButtonImage(Spire.Pdf.Graphics.PdfImage)">
+            <summary>
+            need replace image
+            </summary>
+            <param name="image"></param>
+        </member>
         <member name="M:Spire.Pdf.Widget.PdfButtonWidgetFieldWidget.AddPrintAction">
             <summary>
             Adds Print action to current button field.</summary>
@@ -22050,6 +23096,56 @@
             </summary>
             <param name="images">The images.</param>
             <returns>The PdfNewDocument.</returns>
+        </member>
+        <member name="T:Spire.Pdf.PdfStructureType">
+            <summary>
+            Tagged PDF's standard structure types
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.PdfStructureType.Div">
+            <summary>
+            A generic block-level element or group of elements
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.PdfStructureType.Span">
+            <summary>
+            A generic inline portion of text having no particular inherent characteristics
+            </summary>
+        </member>
+        <member name="F:Spire.Pdf.PdfStructureType.Figure">
+            <summary>
+            An item of graphical content
+            </summary>
+        </member>
+        <member name="T:Spire.Pdf.PdfStructTreeRoot">
+            <summary>
+            Represents the document's structure tree root dictionary
+            </summary>
+        </member>
+        <member name="M:Spire.Pdf.PdfStructTreeRoot.Build">
+            <summary>
+            Build struct tree root before saved.
+            </summary>
+        </member>
+        <member name="T:Spire.Pdf.PdfStructElement">
+            <summary>
+            Represents the structure element
+            </summary>
+        </member>
+        <member name="M:Spire.Pdf.PdfStructElement.Build">
+            <summary>
+            Build struct element before saved.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.PdfStructElement.Parent">
+            <summary>
+            The parent struct element
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.PdfStructElement.TreeRoot">
+            <summary>
+            The parent tree root
+            </summary>
         </member>
         <member name="T:Spire.Pdf.AutomaticFields.PdfStaticField">
             <summary>
@@ -23279,6 +24375,26 @@
             </summary>
             <value>The transition.</value>
         </member>
+        <member name="T:Spire.Pdf.PdfPaperSourceTray">
+            <summary>
+            Specifies the paper tray when the document is printed.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.PdfPaperSourceTray.StartPage">
+            <summary>
+            Gets or sets the page number (non zero-based) of the first page to print.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.PdfPaperSourceTray.EndPage">
+            <summary>
+            Gets or sets the page number (non zero-based) of the last page to print.
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.PdfPaperSourceTray.PrintPaperSource">
+            <summary>
+            Specifies the paper tray from which the printer gets paper.
+            </summary>
+        </member>
         <member name="T:Spire.Pdf.PdfNewPage">
             <summary>
             Represents a single PDF page.
@@ -23982,49 +25098,28 @@
             <param name="name">The name of the field.</param>
             <param name="m_signature">a PdfSignature obj</param>
         </member>
-        <member name="M:Spire.Pdf.Fields.PdfSignatureField.DrawSignaturePicture(Spire.Pdf.Graphics.PdfCanvas,System.String,System.Single,System.Single)">
+        <member name="M:Spire.Pdf.Fields.PdfSignatureField.DrawImage(Spire.Pdf.Graphics.PdfImage,System.Single,System.Single)">
             <summary>
-            Draw Picture Signature
+            Draws an image.
             </summary>
-            <param name="g"></param>
-            <param name="picturePath"></param>
-            <param name="x"></param>
-            <param name="y"></param>
+            <param name="image">The image.</param>
+            <param name="x">The x.</param>
+            <param name="y">The y.</param>
         </member>
-        <member name="M:Spire.Pdf.Fields.PdfSignatureField.DrawSignatureText(Spire.Pdf.Graphics.PdfCanvas,Spire.Pdf.Graphics.PdfSolidBrush,Spire.Pdf.Graphics.PdfStringFormat,System.Single,System.Single,System.Single)">
+        <member name="M:Spire.Pdf.Fields.PdfSignatureField.DrawImage(Spire.Pdf.Graphics.PdfImage,System.Drawing.RectangleF)">
             <summary>
-            Draw Text Signature
+            Draws an image.
             </summary>
-            <param name="g"></param>
-            <param name="solidBrush"></param>
-            <param name="PdfStrFormat"></param>
-            <param name="HalfWidth"></param>
-            <param name="x"></param>
-            <param name="y"></param>
+            <param name="image">The image.</param>
+            <param name="rectangle">The rectangle.</param>
         </member>
-        <member name="M:Spire.Pdf.Fields.PdfSignatureField.DrawSignatureInformation(Spire.Pdf.Graphics.PdfCanvas,Spire.Pdf.Graphics.PdfSolidBrush,Spire.Pdf.Graphics.PdfStringFormat,System.Single,System.Single,System.Single)">
+        <member name="M:Spire.Pdf.Fields.PdfSignatureField.DrawImage(Spire.Pdf.Graphics.PdfImage,System.Drawing.PointF,System.Drawing.SizeF)">
             <summary>
-            Draw Signature information
+            Draws an image.
             </summary>
-            <param name="g"></param>
-            <param name="solidBrush"></param>
-            <param name="PdfStrFormat"></param>
-            <param name="HalfWidth"></param>
-            <param name="x"></param>
-            <param name="y"></param>
-        </member>
-        <member name="M:Spire.Pdf.Fields.PdfSignatureField.DrawStringText(Spire.Pdf.Graphics.PdfCanvas,Spire.Pdf.Graphics.PdfFont,Spire.Pdf.Graphics.PdfSolidBrush,Spire.Pdf.Graphics.PdfStringFormat,System.String,System.Single,System.Single@,System.Single)">
-            <summary>
-            DrawString 
-            </summary>
-            <param name="g">PdfCanvas g</param>
-            <param name="font">PdfFont font</param>
-            <param name="solidBrush">PdfSolidBrush solidBrush</param>
-            <param name="PdfStrFormat">PdfStringFormat PdfStrFormat</param>
-            <param name="DrawText">text</param>
-            <param name="x">point x</param>
-            <param name="y">point y</param>
-            <param name="HalfWidth">half - width</param>
+            <param name="image">The image.</param>
+            <param name="point">The point.</param>
+            <param name="size">The size.</param>
         </member>
         <member name="T:Spire.Pdf.Fields.PdfRadioButtonListField">
             <summary>
@@ -24965,6 +26060,18 @@
             dimension.
             </summary>
         </member>
+        <member name="F:Spire.Pdf.General.PdfDestinationMode.FitH">
+            <summary>
+            Display the page designated by page, with the vertical coordinate top positioned
+            at the top edge of the window and the contents of the page magnified
+            just enough to fit the entire width of the page within the window.
+            </summary>
+        </member>
+        <member name="T:Spire.Pdf.General.FormFieldFTType">
+            <summary>
+            Pdf version 1-7 ,on page 675
+            </summary>
+        </member>
         <member name="F:Spire.Pdf.General.Render.TextElement.m_wordSpacing">
             <summary>
             word spacing 
@@ -24978,7 +26085,7 @@
             <param name="render"></param>
             <param name="IncreaseWidth"></param>
         </member>
-        <member name="M:Spire.Pdf.General.Render.TextElement.RenderTextWidthNativeFont(System.Drawing.Graphics,Spire.Pdf.General.Render.PdfToImageRenderer,System.Boolean)">
+        <member name="M:Spire.Pdf.General.Render.TextElement.RenderTextWithNativeFont(System.Drawing.Graphics,Spire.Pdf.General.Render.PdfToImageRenderer,System.Boolean)">
             <summary>
             Render text using installed system font.
             </summary>
@@ -24998,9 +26105,21 @@
             word spacing 
             </summary>
         </member>
+        <member name="F:Spire.Pdf.General.Render.PdfImageDecoder.m_ImageQualityMode">
+            <summary>
+            specify the quality level of decode image
+            </summary>
+        </member>
         <member name="M:Spire.Pdf.General.Render.PdfImageDecoder.GetImageFromStream(System.IO.Stream)">
             <summary>
             Stream stream  ,Bug_337
+            </summary>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Spire.Pdf.General.Render.PdfImageDecoder.GetImageDeviceGrayForLZWDecode(System.IO.Stream)">
+            <summary>
+            Get deviceGray image for Filter LZWDecode
             </summary>
             <param name="stream"></param>
             <returns></returns>
@@ -25040,10 +26159,34 @@
             <param name="allowIndexed"></param>
             <returns></returns>
         </member>
+        <member name="P:Spire.Pdf.General.Render.PdfImageDecoder.ImageQualityMode">
+            <summary>
+            specify the quality level of decode image
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.General.Render.PdfImageDecoder.ParamColumns">
+            <summary>
+            get columns from DecodeParms
+            </summary>
+        </member>
+        <member name="P:Spire.Pdf.General.Render.PdfImageDecoder.ParamColors">
+            <summary>
+            get colors from DecodeParms
+            </summary>
+        </member>
         <member name="P:Spire.Pdf.General.Render.PdfImageDecoder.ImageMask">
             <summary>
             Gets Image mask.
             </summary>        
+        </member>
+        <member name="M:Spire.Pdf.General.Render.PdfElement.ContentParser.ReadBIData(System.Collections.Generic.List{System.Byte},System.Char,System.Char,System.Int32@)">
+            <summary>
+            read bi data
+            </summary>
+            <param name="eiBytes"></param>
+            <param name="ch2"></param>
+            <param name="nextChar"></param>
+            <param name="endPosition"></param>
         </member>
         <member name="M:Spire.Pdf.General.Render.PdfElement.ContentParser.ParseInlineImage">
              <summary>

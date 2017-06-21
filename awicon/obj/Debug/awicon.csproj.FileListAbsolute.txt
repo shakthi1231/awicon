@@ -99,3 +99,9 @@ C:\Users\Shakthi Kumar\Documents\Visual Studio 2015\Projects\awicon\awicon\bin\M
 C:\Users\Shakthi Kumar\Documents\Visual Studio 2015\Projects\awicon\awicon\bin\Spire.Common.xml
 C:\Users\Shakthi Kumar\Documents\Visual Studio 2015\Projects\awicon\awicon\bin\Spire.Pdf.xml
 C:\Users\Shakthi Kumar\Documents\Visual Studio 2015\Projects\awicon\awicon\bin\Spire.XLS.xml
+C:\Users\Shakthi Kumar\Documents\Visual Studio 2015\Projects\awicon\awicon\bin\System.Data.Common.dll
+C:\Users\Shakthi Kumar\Documents\Visual Studio 2015\Projects\awicon\awicon\bin\System.Data.SqlClient.dll
+C:\Users\Shakthi Kumar\documents\visual studio 2015\Projects\awicon\awicon\bin\System.Web.Cors.dll
+C:\Users\Shakthi Kumar\documents\visual studio 2015\Projects\awicon\awicon\bin\System.Web.Http.Cors.dll
+C:\Users\Shakthi Kumar\documents\visual studio 2015\Projects\awicon\awicon\bin\System.Web.Http.Cors.xml
+C:\Users\Shakthi Kumar\documents\visual studio 2015\Projects\awicon\awicon\obj\Debug\awicon.csprojResolveAssemblyReference.cache
