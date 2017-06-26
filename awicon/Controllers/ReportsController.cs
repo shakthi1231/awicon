@@ -20,17 +20,35 @@ namespace awicon.Controllers
     public class ReportsController : ApiController
     {
         // GET: api/Reports
+        public static void buildLayout(SqlDataReader file)
+        {
+              try { 
+                           // var blob = new Byte[(file.GetBytes(0, 0, null, 0, int.MaxValue)];
+                           // sqlQueryResult.GetBytes(0, 0, blob, 0, blob.Length);
+                          //  using (var fs = new FileStream(varPathToNewLocation, FileMode.Create, FileAccess.Write))
+                          //      fs.Write(blob, 0, blob.Length);
+                            Debug.WriteLine("Completed.....");
+                        
+
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("Ëxception is thrown");
+                    Debug.WriteLine(ex.Message);
+                }
+            }
+
         private HttpResponseMessage writeToExcel(DataTable dt)
         {
-            //XLWorkbook Workbook = new XLWorkbook();
+            XLWorkbook Workbook = new XLWorkbook(@"c:\temp\Sample.xlsx");
             HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
-            //IXLWorksheet Worksheet = Workbook.Worksheets.Add("Data");
-            //Debug.WriteLine(Worksheet);
-            //IXLCell CellForNewData = Worksheet.Cell(8, 1);
-            //CellForNewData.InsertTable(dt.AsEnumerable());
-            //Worksheet.Row(8).Delete();
-            //Workbook.SaveAs(@"c:\temp\Sample.xlsx");
- 
+            IXLWorksheet Worksheet = Workbook.Worksheets.First();
+            Debug.WriteLine(Worksheet);
+            IXLCell cellfornewdata = Worksheet.Cell(8, 1);
+            cellfornewdata.InsertTable(dt.AsEnumerable());
+            Worksheet.Row(8).Delete();
+            Workbook.SaveAs(@"c:\temp\Sample.xlsx");
+
             try
             {
                 Workbook workbook = new Workbook();
@@ -41,9 +59,9 @@ namespace awicon.Controllers
                 workbook.CustomDocumentProperties.Add("Phone number1", 81705109);
                 workbook.CustomDocumentProperties.Add("Revision number", 7.12);
                 workbook.CustomDocumentProperties.Add("Revision date", DateTime.Now);
-                workbook.SaveToFile(@"c:\temp\HelloWorld.pdf", FileFormat.PDF);
-                Process.Start(@"c:\temp\HelloWorld.pdf");
-                var pdf = @"c:\temp\HelloWorld.pdf";
+                workbook.SaveToFile(@"c:\temp\Sample.pdf", FileFormat.PDF);
+                Process.Start(@"c:\temp\Sample.pdf");
+                var pdf = @"c:\temp\Sample.pdf";
                
                 var stream = new FileStream(pdf, FileMode.Open, FileAccess.Read);
                 result.Content = new StreamContent(stream);
@@ -102,7 +120,7 @@ namespace awicon.Controllers
                             dt.Columns.Add(colNames[i]);
                         }
                         int count = 0;
-                        while (sqlQueryResult.Read() && count < 20){
+                        while (sqlQueryResult.Read() && count < 300){
                             DataRow dataRow = dt.NewRow();
                             for (int i = 0; i < colNames.Count; i++)
                             {
@@ -141,8 +159,9 @@ namespace awicon.Controllers
         }
 
 
-        public HttpResponseMessage Get()
-        {   var report = "Second";
+        public HttpResponseMessage Get(string report)
+        {
+            
             var connection = SqlLib.getConnection();
             var commandText = @"SELECT * FROM [dbo].[Reports] WHERE [name] = @name";
             HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
@@ -156,14 +175,15 @@ namespace awicon.Controllers
                     {
                         Debug.WriteLine("SqlResult is successfulr");
                         var reportObj =  sqlQueryResult.Read();
-
-                        var template = sqlQueryResult["template"];
+                        byte[] template = (byte[])sqlQueryResult["template"];
                         var startRow = Int32.Parse(sqlQueryResult["startRow"].ToString());
                         var table = sqlQueryResult["table"].ToString();
                         var map = sqlQueryResult["map"].ToString();
-               
 
-                          DataTable dt = getColumns(table,map);
+
+                        using (var fs = new FileStream(@"c:\temp\Sample.xlsx", FileMode.Create, FileAccess.Write))
+                            fs.Write(template, 0, template.Length);
+                        DataTable dt = getColumns(table,map);
                           result = writeToExcel(dt);
 
                     }
